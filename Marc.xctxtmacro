@@ -1,0 +1,55 @@
+/**
+    Marc Liyanage Xcode text macro specifications
+
+    http://github.com/liyanage/xcode-text-macros/
+*/
+
+(
+    {
+        Identifier = objc.stringliteral;
+        BasedOn = objc;
+        IsMenuItem = YES;
+        Name = "String Literal";
+        TextString = "@\"<#!statements!#>\"";
+        OnlyAtBOL = NO;
+    },
+    {
+        Identifier = objc.log.0arg;
+        BasedOn = objc;
+        IsMenuItem = YES;
+        Name = "NSLog() Call";
+        TextString = "NSLog$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#!statements!#>\"$(InFunctionArgsSpacing));";
+        CompletionPrefix = log;
+        OnlyAtBOL = YES;
+        IncludeContexts = ( "xcode.lang.objc.block" );
+		CycleList = (
+			objc.log.0arg,
+			objc.log.1arg,
+		);
+    },
+    {
+        Identifier = objc.log.1arg;
+        BasedOn = objc;
+        IsMenuItem = YES;
+        Name = "NSLog() Call 1 Argument";
+        TextString = "NSLog$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#message#> %@\", <#!statements!#>$(InFunctionArgsSpacing));";
+        CompletionPrefix = log1;
+        OnlyAtBOL = YES;
+        IncludeContexts = ( "xcode.lang.objc.block" );
+    },
+    {
+        Identifier = c.block.if.singlestatement;
+        BasedOn = c.block.if;
+        Name = "If Block Single Statement";
+        IsMenuItem = YES;
+        OnlyAtBOL = YES;
+        CompletionPrefix = if1;
+        CycleList = (
+            c.block.if.singlestatement,
+            c.block.if,
+            c.block.ifelse,
+        );
+        TextString = "$(Statement)$(BlockSeparator)\n\t<#!statements!#>\n";
+    },
+)
+
