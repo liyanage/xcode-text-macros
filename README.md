@@ -90,6 +90,12 @@ Put the .xctxtmacro file into your
 directory. Then restart Xcode so it picks them up. *Definitely* assign keyboard
 shortcuts :-)
 
+Ideally, you would `git clone` this project directly from GitHub
+to some location on your system and put a symbolic link to the macro file into
+the directory given above. That way, you can always update to the newest version
+of the macro collection with a simple `git pull`. If you start your own collection
+put them in a separate file in the same directory.
+
 Here’s a quick run-down of some of the macros:
 
 Objective-C String Literal
