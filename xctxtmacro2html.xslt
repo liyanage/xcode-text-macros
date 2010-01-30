@@ -7,6 +7,7 @@
 <xsl:template match="/plist/array">
 	<html>
 		<head>
+			<title>Xcode Objective-C Text Macro Cheat Sheet</title>
 			<style type='text/css'>
 
 				body, td {
@@ -48,6 +49,9 @@
 		
 		</head>
 		<body>
+		
+			<h1>Xcode Text Macro Cheat Sheet</h1>
+			<p>This is a sample. See this page to make your own cheat sheet: <a href='http://github.com/liyanage/xcode-text-macros/'>http://github.com/liyanage/xcode-text-macros/</a></p>
 			<table>
 			<tr>
 				<th>Name</th>

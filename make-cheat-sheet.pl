@@ -34,9 +34,7 @@ sub run {
 
 	$self->read_keyboard_shortcuts();
  	$self->read_macro_definitions();
- 	$self->create_xml_document();
-# 	$self->format_xml_document();
-# 	$self->display_html_result();
+ 	$self->generate_output();
 
 	return 0;
 }
@@ -173,10 +171,10 @@ sub read_plist {
 }
 
 
-sub create_xml_document {
+sub generate_output {
 	my $self = shift;
 	my $path = '/tmp/xcode-text-macros.plist';
-	my $path_out = '/tmp/xcode-text-macros.html';
+	my $path_out = 'xcode-macro-cheat-sheet.html';
 	$self->{doc}->toFile($path);
 	system('xsltproc', '-o', $path_out, 'xctxtmacro2html.xslt', $path);
 #	system('qlmanage', '-p', $path_out);
