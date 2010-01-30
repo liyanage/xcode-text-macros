@@ -17,6 +17,21 @@ You’re more than welcome to spice up that HTML in the XSLT:-)
 About Xcode’s Text Macros in General
 ====================================
 
+My guess is that they are underutilized by Xcode users. They certainly
+aren’t very discoverable where they are in the Edit menu, with no keyboard
+shortcuts assigned by default. Personally, I would give them their own toplevel
+menu bar item in Xcode, with a nice space-saving icon like the one
+[BBEdit](http://www.barebones.com/products/bbedit/)
+uses for its clippings.
+
+I know I didn’t use them a lot, I used
+[Objective Development](http://www.obdev.at)’s
+[Completion Dictionary](http://www.obdev.at/products/completion-dictionary/index.html)
+instead.
+
+But Xcode’s macros are very powerful. The first step to harnessing that power
+for your daily coding is to start using what’s already there:
+
 * Assigning keyboard shortcuts to the most often used macros is *highly*
   recommended, especially to get one of the coolest text macro features,
   cycle lists. Cycle lists link together related macros and let you
@@ -41,6 +56,9 @@ About Xcode’s Text Macros in General
   giving them their own shortcut. In those cases it’s a good idea to
   memorize their completion shortcut instead, which is the next best thing.
   To insert the macro, type the completion shortcut and hit the tab key.
+
+The second step is to start writing (and hopefully sharing) your own macros:
+
 * Xcode’s macro language is fairly complicated, and as far as I know not
   well-documented, but it is also very powerful because it uses an inheritance
   system and flexible token replacement features. It’s worth to learn it,
@@ -54,9 +72,11 @@ About Xcode’s Text Macros in General
 About the Macros
 ================
 
-With all of these, play around a bit, with something selected, nothing
-selected etc. to see what gets wrapped, where the cursor ends up, what
-placeholders get inserted.
+With both the built-in macros and the ones in this collection here, play
+around a bit, with something selected, nothing selected etc. to see what
+gets wrapped, where the cursor ends up, what placeholders get inserted.
+If you spend a lot of time in Xcode, you’ll really want to get familiar
+with text macros.
 
 Installation
 ------------

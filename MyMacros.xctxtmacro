@@ -64,7 +64,7 @@
         Name = "Method Definition - void no Parameters";
         IsMenuItem = YES;
         BasedOn = objc.method;
-        Declaration = "- (void)<#method name#>";
+        Declaration = "- (<#return type#>)<#method name#>";
         CycleList = (
         	objc.method.void,
 			objc.method.generic,
