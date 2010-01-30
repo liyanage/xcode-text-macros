@@ -1,3 +1,6 @@
+About This Package
+==================
+
 Here are some Xcode text macros I use for writing Objective-C code.
 They speed up my coding a lot, especially the macros for methods.
 
@@ -18,34 +21,38 @@ About Xcode’s Text Macros in General
   recommended, especially to get one of the coolest text macro features,
   cycle lists. Cycle lists link together related macros and let you
   quickly flip through them by repeatedly pressing the shortcut. This
-  is very useful for different variants of if () statements, for example.
+  is very useful for different variants of `if ()` statements, for example.
   Until recently I didn’t even know about cycle lists.
 * Another great feature that’s easier to use with keyboard shortcuts is
   the ability of some macros to wrap selected text. Again this is useful
-  for if () statements, and especially so in combination with the previous
+  for `if ()` statements, and especially so in combination with the previous
   feature. Select a bunch of lines, hit the shortcut to wrap them in an
-  if () block, and hit the shortcut again to switch to an if / else block.
+  `if ()` block, and hit the shortcut again to switch to an `if / else` block.
   Taken together, this results in a killer feature.
 * I recommend picking a simple and consistent keyboard shortcut convention
   across all macros. I use just the Ctrl key with letters. Obviously
   this only works because I don’t use the emacs text editing bindings,
   except maybe Ctrl-T once in a while. My recommendations are listed below
-  in the macro list. You could also use the number keys with e.g. Cmd-Ctrl.
-  If you pick something simple and unified, you’ll have an easier time
-  remembering the shortcuts, and only if you remember and use them a lot
-  will you get the full benefit.
+  in the macro list. You could also use the number keys with Cmd-Ctrl.
+  Whatever you pick, if it is something simple and unified, you’ll have
+  an easier time remembering the shortcuts, and only if you remember and
+  use them a lot will you get the full time-saving benefit.
 * Xcode’s macro language is fairly complicated, and as far as I know not
   well-documented, but it is also very powerful because it uses an inheritance
   system and flexible token replacement features. It’s worth to learn it,
-  and you can learn a lot by looking at the built-in C.xctxtmacro file.
+  and you can learn a lot by looking at the built-in `C.xctxtmacro` file.
   The built-in macro files are in the Xcode application bundle in
-  Contents/PlugIns/TextMacros.xctxtmacro/Contents/Resources/.
-* The Xcode user defaults also influence the macros. These are documented
-  [here](http://developer.apple.com/mac/library/documentation/DeveloperTools/Reference/XcodeUserDefaultRef/100-Xcode_User_Defaults/UserDefaultRef.html#//apple_ref/doc/uid/TP40005535-CH3-SW40).
+  `Contents/PlugIns/TextMacros.xctxtmacro/Contents/Resources/`.
+* The Xcode user defaults also influence the macros, specifically the whitespace.
+  These defaults are documented [here](http://developer.apple.com/mac/library/documentation/DeveloperTools/Reference/XcodeUserDefaultRef/100-Xcode_User_Defaults/UserDefaultRef.html#//apple_ref/doc/uid/TP40005535-CH3-SW40).
 
 
 About the Macros
 ================
+
+With all of these, play around a bit, with something selected, nothing
+selected etc. to see what gets wrapped, where the cursor ends up, what
+placeholders get inserted.
 
 Installation
 ------------
@@ -55,14 +62,14 @@ Put the .xctxtmacro file into your
     "$HOME/Library/Application Support/Developer/Shared/Xcode/Specifications/"
 
 directory. Then restart Xcode so it picks them up. *Definitely* assign keyboard
-shortcuts to the most important ones, more on that below.
+shortcuts :-)
 
 Here’s a quick run-down of some of the macros:
 
 Objective-C String Literal
 --------------------------
 
-Inserts @"". If something is selected, puts that between the quotes.
+Inserts `@""`. If something is selected, it puts that between the quotes.
 Without selection, moves the cursor between the quotes.
 
 Recommended shortcut: ⌃\
@@ -70,7 +77,7 @@ Recommended shortcut: ⌃\
 NSLog() Calls
 -------------
 
-Inserts NSLog() calls with zero and one arguments. The two are linked
+Inserts `NSLog()` calls with zero and one arguments. The two are linked
 in a cycle list.
 
 Recommended shortcut: ⌃L
@@ -78,8 +85,8 @@ Recommended shortcut: ⌃L
 Single-Statement if ()
 ----------------------
 
-Inserts an if () statement without the braces. It’s linked to several
-other if () statement variants in a cycle list.
+Inserts an `if ()` statement without the braces. It’s linked to several
+other `if ()` statement variants in a cycle list.
 
 Method Definitions
 ------------------
@@ -92,7 +99,7 @@ Recommended shortcut: ⌃M
 Method Parameter
 ----------------
 
-Inserts an xxxx:(yyy)zzz sequence to add a parameter to a method
+Inserts an `xxxx:(yyy)zzz` sequence to add a parameter to a method
 definition/declaration. Ideal for combination with the method
 blocks in the previous item.
 
@@ -107,5 +114,5 @@ Objective-C files built in to Xcode. By default it doesn’t
 read the shortcuts for C++ or the other languages supported
 by Xcode, because I don’t use those and don’t want them cluttering
 up the list. If you want them you can enable them in the generator’s
-read_macro_definitions() method.
+`read_macro_definitions()` method.
 
