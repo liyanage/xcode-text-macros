@@ -37,6 +37,10 @@ About Xcode’s Text Macros in General
   Whatever you pick, if it is something simple and unified, you’ll have
   an easier time remembering the shortcuts, and only if you remember and
   use them a lot will you get the full time-saving benefit.
+* You might use some macros once in a while, not often enough to justify
+  giving them their own shortcut. In those cases it’s a good idea to
+  memorize their completion shortcut instead, which is the next best thing.
+  To insert the macro, type the completion shortcut and hit the tab key.
 * Xcode’s macro language is fairly complicated, and as far as I know not
   well-documented, but it is also very powerful because it uses an inheritance
   system and flexible token replacement features. It’s worth to learn it,
