@@ -37,24 +37,26 @@ for your daily coding is to start using what’s already there:
   cycle lists. Cycle lists link together related macros and let you
   quickly flip through them by repeatedly pressing the shortcut. This
   is very useful for different variants of `if ()` statements, for example.
-  Until recently I didn’t even know about cycle lists.
+  Until recently I didn’t even know about cycle lists. The cheat sheet
+  shows you which macros are part of a cycle list.
 * Another great feature that’s easier to use with keyboard shortcuts is
   the ability of some macros to wrap selected text. Again this is useful
-  for `if ()` statements, and especially so in combination with the previous
+  for block statements such as `if ()`, especially in combination with the previous
   feature. Select a bunch of lines, hit the shortcut to wrap them in an
-  `if ()` block, and hit the shortcut again to switch to an `if / else` block.
+  `if ()` block, hit the shortcut again to switch to an `if / else` block.
   Taken together, this results in a killer feature.
 * I recommend picking a simple and consistent keyboard shortcut convention
   across all macros. I use just the Ctrl key with letters. Obviously
   this only works because I don’t use the emacs text editing bindings,
   except maybe Ctrl-T once in a while. My recommendations are listed below
-  in the macro list. You could also use the number keys with Cmd-Ctrl.
-  Whatever you pick, if it is something simple and unified, you’ll have
-  an easier time remembering the shortcuts, and only if you remember and
-  use them a lot will you get the full time-saving benefit.
-* You might use some macros once in a while, not often enough to justify
+  in the macro list and in the cheat sheet sample. You could also use the
+  number keys with Cmd-Ctrl. Whatever you pick, if you make it something
+  simple and unified, you’ll have an easier time remembering the shortcuts,
+  and only if you remember and use them a lot will you get the full time-saving
+  benefit.
+* You might use some macros once in a while, but not often enough to justify
   giving them their own shortcut. In those cases it’s a good idea to
-  memorize their completion shortcut instead, which is the next best thing.
+  still memorize their completion shortcut, which is the next best thing.
   To insert the macro, type the completion shortcut and hit the tab key.
 
 The second step is to start writing (and hopefully sharing) your own macros:
