@@ -122,4 +122,9 @@ It reads *all* of the `.xctxtmacro` files in your personal
 directory, as it is likely that you care a lot about those...
 
 
+Related Projects
+================
 
+Here are some related projects:
+
+* [xobjc - Shortcuts for lazy Objective-C developers](http://github.com/holtwick/xobjc)
