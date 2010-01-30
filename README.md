@@ -88,6 +88,8 @@ Single-Statement if ()
 Inserts an `if ()` statement without the braces. It’s linked to several
 other `if ()` statement variants in a cycle list.
 
+Recommended shortcut: ⌃I
+
 Method Definitions
 ------------------
 
