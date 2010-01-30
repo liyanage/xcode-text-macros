@@ -10,7 +10,7 @@
         BasedOn = objc;
         IsMenuItem = YES;
         Name = "String Literal";
-        TextString = "@\"<#!statements!#>\"";
+        TextString = "@\"<#!string!#>\"";
         OnlyAtBOL = NO;
     },
     {
@@ -18,7 +18,7 @@
         BasedOn = objc;
         IsMenuItem = YES;
         Name = "NSLog() Call";
-        TextString = "NSLog$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#!statements!#>\"$(InFunctionArgsSpacing));";
+        TextString = "NSLog$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#!message!#>\"$(InFunctionArgsSpacing));";
         CompletionPrefix = log;
         OnlyAtBOL = YES;
         IncludeContexts = ( "xcode.lang.objc.block" );
@@ -32,7 +32,7 @@
         BasedOn = objc;
         IsMenuItem = YES;
         Name = "NSLog() Call 1 Argument";
-        TextString = "NSLog$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#message#> %@\", <#!statements!#>$(InFunctionArgsSpacing));";
+        TextString = "NSLog$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#message#> %@\", <#!argument!#>$(InFunctionArgsSpacing));";
         CompletionPrefix = log1;
         OnlyAtBOL = YES;
         IncludeContexts = ( "xcode.lang.objc.block" );
@@ -49,7 +49,50 @@
             c.block.if,
             c.block.ifelse,
         );
-        TextString = "$(Statement)$(BlockSeparator)\n\t<#!statements!#>\n";
+        TextString = "$(Statement)$(BlockSeparator)\n\t<#!statement!#>;\n";
     },
+    {
+        Identifier = objc.method;
+        Name = "Method Definition";
+        IsMenuItem = NO;
+        BasedOn = objc;
+        TextString = "$(Declaration)$(BlockSeparator)\n{\n\t<#!statements!#>\n}";
+        IncludeContexts = ( "objc" );
+    },
+    {
+        Identifier = objc.method.void;
+        Name = "Method Definition - void no Parameters";
+        IsMenuItem = YES;
+        BasedOn = objc.method;
+        Declaration = "- (void)<#method name#>";
+        CycleList = (
+        	objc.method.void,
+			objc.method.generic,
+			objc.method.nsstring,
+        );
+    },
+    {
+        Identifier = objc.method.generic;
+        Name = "Method Definition - Generic Method";
+        IsMenuItem = YES;
+        BasedOn = objc.method;
+        Declaration = "- (<#return type#>)<#method name#>:(<#parameter type 1#>)<#parameter name 1#>";
+    },
+    {
+        Identifier = objc.method.nsstring;
+        Name = "Method Definition - NSString Return Value";
+        IsMenuItem = YES;
+        BasedOn = objc.method;
+        CompletionPrefix = ms;
+        Declaration = "- (NSString *)<#method name#>";
+    },
+    {
+        Identifier = objc.method.parameter;
+        Name = "Method Parameter";
+        IsMenuItem = YES;
+        BasedOn = objc.method;
+        TextString = "<#description#>:(<#type#>)<#name#>";
+    },
+    
 )
 

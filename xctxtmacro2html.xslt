@@ -17,6 +17,7 @@
 				.code {
 					font-family: monospace;
 					white-space: pre;
+					font-size: 9pt;
 				}
 
 				td.shortcut {
@@ -29,14 +30,14 @@
 				}
 				
 				td {
-					border: 1px solid #aaa;
+					border: 1px solid #ddd;
 				}
 				
 				th {
-					background-color: #aaa;
+					background-color: #ddd;
 					text-align: left;
-					color: white;
-					border: 1px solid #aaa;
+					border: 1px solid #999;
+					padding-right: 10px;
 				}
 				
 				table {
@@ -68,7 +69,7 @@
 		<td><xsl:value-of select="string[preceding-sibling::key[1][. = 'Name']]"/></td>
 		<td class='code'><xsl:value-of select="string[preceding-sibling::key[1][. = 'CompletionPrefix']]"/></td>
 		<td class='shortcut'><xsl:value-of select="@shortcut"/></td>
-		<td><xsl:apply-templates select = 'array[preceding-sibling::key[1][. = "CycleList"]]/string'/></td>
+		<td><xsl:apply-templates select = 'array[preceding-sibling::key[1][. = "CycleList"]]/string' mode='cyclelist'/></td>
 		<!--
 		<td class='code'>
 			<xsl:apply-templates select='string[preceding-sibling::key[1][. = "TextString"]]'/>
@@ -78,9 +79,8 @@
 	
 </xsl:template>
 
-<xsl:template match='array[preceding-sibling::key[1][. = "CycleList"]]/string'>
-	<xsl:variable name="currentId" select="./text()" />
-	<xsl:value-of select="//dict[string[preceding-sibling::key[1][. = 'Identifier']] = $currentId]/string[preceding-sibling::key[1][. = 'Name']]"/><br/>
+<xsl:template match='string' mode='cyclelist'>
+	<xsl:value-of select="//dict[string[preceding-sibling::key[1][. = 'Identifier']] = current()]/string[preceding-sibling::key[1][. = 'Name']]"/><br/>
 </xsl:template>
 
 
