@@ -118,3 +118,8 @@ by Xcode, because I don’t use those and don’t want them cluttering
 up the list. If you want them you can enable them in the generator’s
 `read_macro_definitions()` method.
 
+It reads *all* of the `.xctxtmacro` files in your personal
+directory, as it is likely that you care a lot about those...
+
+
+
