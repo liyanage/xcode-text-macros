@@ -139,6 +139,26 @@ blocks in the previous item.
 
 Recommended shortcut: ⌃P
 
+@property Declarations
+----------------------
+
+Inserts @property declarations. Cycles through three variants with
+the `retain`, `assign` and `copy` attributes. The selection ends
+up in the type and name part. Tip: copy/paste the property’s
+instance variable declaration and paste it where you want the
+declaration, select it and invoke the shortcut.
+
+Recommended shortcut: ⌃R
+
+@property Synthesize
+--------------------
+
+Inserts @synthesize instructions. Cycles through two variants,
+the second of which uses the `property = ivar` form to assign the
+property to an ivar with a different name.
+
+Recommended shortcut: ⌃S
+
 
 About the Cheat Sheet Generator
 ===============================

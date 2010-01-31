@@ -14,6 +14,60 @@
         OnlyAtBOL = NO;
     },
     {
+        Identifier = objc.propertydeclaration.retain;
+        BasedOn = objc;
+        IsMenuItem = YES;
+        Name = "@property Declaration - retain";
+        TextString = "@property (retain) <#!type and name!#>;";
+        CompletionPrefix = pr;
+		CycleList = (
+			objc.propertydeclaration.retain,
+			objc.propertydeclaration.assign,
+			objc.propertydeclaration.copy,
+		);
+        OnlyAtBOL = YES;
+    },
+    {
+        Identifier = objc.propertydeclaration.assign;
+        BasedOn = objc;
+        IsMenuItem = YES;
+        Name = "@property Declaration - assign";
+        TextString = "@property (assign) <#!type and name!#>;";
+        CompletionPrefix = pra;
+        OnlyAtBOL = YES;
+    },
+    {
+        Identifier = objc.propertydeclaration.copy;
+        BasedOn = objc;
+        IsMenuItem = YES;
+        Name = "@property Declaration - copy";
+        TextString = "@property (copy) <#!type and name!#>;";
+        CompletionPrefix = prc;
+        OnlyAtBOL = YES;
+    },
+    {
+        Identifier = objc.propertysynthesize;
+        BasedOn = objc;
+        IsMenuItem = YES;
+        Name = "@synthesize Property";
+        TextString = "@synthesize <#!name!#>;";
+        CompletionPrefix = syn;
+		CycleList = (
+			objc.propertysynthesize,
+			objc.propertysynthesize.ivar,
+		);
+        OnlyAtBOL = YES;
+    },
+    {
+        Identifier = objc.propertysynthesize.ivar;
+        BasedOn = objc;
+        IsMenuItem = YES;
+        Name = "@synthesize Property, assign ivar";
+        TextString = "@synthesize <#!name!#> = <#ivar#>;";
+        CompletionPrefix = "syni";
+        OnlyAtBOL = YES;
+    },
+    {
         Identifier = objc.log.0arg;
         BasedOn = objc;
         IsMenuItem = YES;
