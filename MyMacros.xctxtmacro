@@ -121,16 +121,7 @@
 		TextString = "$(Declaration)\n{\n\t<#!statements!#>\n}";
 		IncludeContexts = ( "xcode.lang.objc.implementation" );
 		ExcludeContexts = ( "xcode.lang.objc.block" );
-},
-    {
-        Identifier = objc.method.void;
-        Name = "Method Definition - void no Parameters";
-        IsMenuItem = YES;
-        BasedOn = objc.method;
-        Declaration = "- (void)<#method name#>";
-        CompletionPrefix = mev;
-        OnlyAtBOL = YES;
-    },
+	},
     {
         Identifier = objc.method.return;
         Name = "Method Definition - Return Value no Parameters";
@@ -141,9 +132,28 @@
         CycleList = (
         	objc.method.return,
         	objc.method.void,
+        	objc.method.ibaction,
 			objc.method.generic,
 			objc.method.nsstring,
         );
+        OnlyAtBOL = YES;
+    },
+    {
+        Identifier = objc.method.void;
+        Name = "Method Definition - void no Parameters";
+        IsMenuItem = YES;
+        BasedOn = objc.method;
+        Declaration = "- (void)<#method name#>";
+        CompletionPrefix = mev;
+        OnlyAtBOL = YES;
+    },
+    {
+        Identifier = objc.method.ibaction;
+        Name = "Method Definition - IBAction";
+        IsMenuItem = YES;
+        BasedOn = objc.method;
+        Declaration = "- (IBAction)<#method name#>:(id)sender";
+        CompletionPrefix = iba;
         OnlyAtBOL = YES;
     },
     {
