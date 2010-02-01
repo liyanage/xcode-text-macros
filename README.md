@@ -159,6 +159,13 @@ property to an ivar with a different name.
 
 Recommended shortcut: ⌃S
 
+NSString With Format
+--------------------
+
+Inserts [NSString stringWithFormat:...].
+
+Recommended shortcut: ⌃F
+
 
 About the Cheat Sheet Generator
 ===============================

@@ -14,57 +14,64 @@
         OnlyAtBOL = NO;
     },
     {
-        Identifier = objc.propertydeclaration.retain;
+        Identifier = objc.property.declaration;
         BasedOn = objc;
+		IncludeContexts = ( "xcode.lang.objcpp.interface", xcode.lang.objc.interface );
+	},
+    {
+        Identifier = objc.property.declaration.retain;
+        BasedOn = objc.property.declaration;
         IsMenuItem = YES;
         Name = "@property Declaration - retain";
         TextString = "@property (retain) <#!type and name!#>;";
-        CompletionPrefix = pr;
+        CompletionPrefix = "@pr";
 		CycleList = (
-			objc.propertydeclaration.retain,
-			objc.propertydeclaration.assign,
-			objc.propertydeclaration.copy,
+			objc.property.declaration.retain,
+			objc.property.declaration.assign,
+			objc.property.declaration.copy,
 		);
         OnlyAtBOL = YES;
     },
     {
-        Identifier = objc.propertydeclaration.assign;
-        BasedOn = objc;
+        Identifier = objc.property.declaration.assign;
+        BasedOn = objc.property.declaration;
         IsMenuItem = YES;
         Name = "@property Declaration - assign";
         TextString = "@property (assign) <#!type and name!#>;";
-        CompletionPrefix = pra;
+        CompletionPrefix = "@pra";
         OnlyAtBOL = YES;
     },
     {
-        Identifier = objc.propertydeclaration.copy;
-        BasedOn = objc;
+        Identifier = objc.property.declaration.copy;
+        BasedOn = objc.property.declaration;
         IsMenuItem = YES;
         Name = "@property Declaration - copy";
         TextString = "@property (copy) <#!type and name!#>;";
-        CompletionPrefix = prc;
+        CompletionPrefix = "@prc";
         OnlyAtBOL = YES;
     },
     {
-        Identifier = objc.propertysynthesize;
+        Identifier = objc.property.synthesize;
         BasedOn = objc;
         IsMenuItem = YES;
         Name = "@synthesize Property";
         TextString = "@synthesize <#!name!#>;";
-        CompletionPrefix = syn;
+        CompletionPrefix = "@syn";
 		CycleList = (
-			objc.propertysynthesize,
-			objc.propertysynthesize.ivar,
+			objc.property.synthesize,
+			objc.property.synthesize.ivar,
 		);
         OnlyAtBOL = YES;
+		IncludeContexts = ( "xcode.lang.objc.implementation" );
+		ExcludeContexts = ( "xcode.lang.objc.block" );
     },
     {
-        Identifier = objc.propertysynthesize.ivar;
-        BasedOn = objc;
+        Identifier = objc.property.synthesize.ivar;
+        BasedOn = objc.property.synthesize;
         IsMenuItem = YES;
         Name = "@synthesize Property, assign ivar";
         TextString = "@synthesize <#!name!#> = <#ivar#>;";
-        CompletionPrefix = "syni";
+        CompletionPrefix = "@syni";
         OnlyAtBOL = YES;
     },
     {
@@ -110,20 +117,24 @@
         Name = "Method Definition";
         IsMenuItem = NO;
         BasedOn = objc;
-        TextString = "$(Declaration)$(BlockSeparator)\n{\n\t<#!statements!#>\n}";
-        IncludeContexts = ( "objc" );
-    },
+        OnlyAtBOL = YES;
+		TextString = "$(Declaration)$(BlockSeparator)\n{\n\t<#!statements!#>\n}";
+		IncludeContexts = ( "xcode.lang.objc.implementation" );
+		ExcludeContexts = ( "xcode.lang.objc.block" );
+},
     {
         Identifier = objc.method.void;
         Name = "Method Definition - void no Parameters";
         IsMenuItem = YES;
         BasedOn = objc.method;
         Declaration = "- (<#return type#>)<#method name#>";
+        CompletionPrefix = mev;
         CycleList = (
         	objc.method.void,
 			objc.method.generic,
 			objc.method.nsstring,
         );
+        OnlyAtBOL = YES;
     },
     {
         Identifier = objc.method.generic;
@@ -131,14 +142,17 @@
         IsMenuItem = YES;
         BasedOn = objc.method;
         Declaration = "- (<#return type#>)<#method name#>:(<#parameter type 1#>)<#parameter name 1#>";
+        CompletionPrefix = me;
+        OnlyAtBOL = YES;
     },
     {
         Identifier = objc.method.nsstring;
         Name = "Method Definition - NSString Return Value";
         IsMenuItem = YES;
         BasedOn = objc.method;
-        CompletionPrefix = ms;
+        CompletionPrefix = mes;
         Declaration = "- (NSString *)<#method name#>";
+        OnlyAtBOL = YES;
     },
     {
         Identifier = objc.method.parameter;
@@ -146,6 +160,17 @@
         IsMenuItem = YES;
         BasedOn = objc.method;
         TextString = "<#description#>:(<#type#>)<#name#>";
+        CompletionPrefix = para;
+        OnlyAtBOL = YES;
+    },
+    {
+        Identifier = objc.string.format;
+        Name = "NSString With Format";
+        IsMenuItem = YES;
+        BasedOn = objc;
+        CompletionPrefix = sf;
+        TextString = "[NSString stringWithFormat:@\"<#!format!#>\", <#arguments#>]";
+        OnlyAtBOL = NO;
     },
     
 )

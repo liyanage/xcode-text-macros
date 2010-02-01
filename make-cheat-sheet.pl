@@ -160,6 +160,8 @@ sub assign_shortcut_to_macro {
 sub read_plist {
 	my $self = shift;
 	my ($path) = @_;
+	my $is_valid = !(system('plutil', '-lint', '-s', $path) >> 8);
+	die "Invalid plist '$path'" unless ($is_valid);
 	my $plist_xml_string = qx(plutil -convert xml1 -o - "$path");
 	die "Unable to read plist at '$path'" unless $plist_xml_string;
 	my $parser = XML::LibXML->new();
