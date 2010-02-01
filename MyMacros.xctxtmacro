@@ -5,6 +5,20 @@
 */
 
 (
+
+/* *********************************************************
+ * Strings
+ * *********************************************************/
+
+    {
+        Identifier = objc.string.format;
+        Name = "NSString With Format";
+        IsMenuItem = YES;
+        BasedOn = objc;
+        CompletionPrefix = sf;
+        TextString = "[NSString stringWithFormat:@\"<#!format!#>\", <#arguments#>]";
+        OnlyAtBOL = NO;
+    },
     {
         Identifier = objc.stringliteral;
         BasedOn = objc;
@@ -13,6 +27,11 @@
         TextString = "@\"<#!string!#>\"";
         OnlyAtBOL = NO;
     },
+
+/* *********************************************************
+ * Properties
+ * *********************************************************/
+
     {
         Identifier = objc.property.declaration;
         BasedOn = objc;
@@ -74,6 +93,11 @@
         CompletionPrefix = "@syni";
         OnlyAtBOL = YES;
     },
+
+/* *********************************************************
+ * NSLog
+ * *********************************************************/
+
     {
         Identifier = objc.log.0arg;
         BasedOn = objc;
@@ -98,6 +122,11 @@
         OnlyAtBOL = YES;
         IncludeContexts = ( "xcode.lang.objc.block" );
     },
+
+/* *********************************************************
+ * Control Statements
+ * *********************************************************/
+
     {
         Identifier = c.block.if.singlestatement;
         BasedOn = c.block.if;
@@ -112,16 +141,20 @@
         );
         TextString = "$(Statement)$(BlockSeparator)\n\t<#!statement!#>;\n";
     },
+
+/* *********************************************************
+ * Methods
+ * *********************************************************/
+
     {
         Identifier = objc.method;
-        Name = "Method Definition";
         IsMenuItem = NO;
         BasedOn = objc;
         OnlyAtBOL = YES;
 		TextString = "$(Declaration)\n{\n\t<#!statements!#>\n}";
-		IncludeContexts = ( "xcode.lang.objc.implementation" );
-		ExcludeContexts = ( "xcode.lang.objc.block" );
+		ExcludeContexts = ( xcode.lang.objc.block );
 	},
+
     {
         Identifier = objc.method.return;
         Name = "Method Definition - Return Value no Parameters";
@@ -137,7 +170,26 @@
 			objc.method.nsstring,
         );
         OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objc.implementation );
     },
+    {
+        Identifier = objc.method.return.declaration;
+        Name = "Method Declaration - Return Value no Parameters";
+        IsMenuItem = YES;
+        BasedOn = objc.method.return;
+        CompletionPrefix = "me";
+        TextString = "$(Declaration);";
+        CycleList = (
+        	objc.method.return.declaration,
+        	objc.method.void.declaration,
+        	objc.method.ibaction.declaration,
+			objc.method.generic.declaration,
+			objc.method.nsstring.declaration,
+        );
+        OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objcpp.interface, xcode.lang.objc.interface, xcode.lang.objcpp.protocol );
+    },
+
     {
         Identifier = objc.method.void;
         Name = "Method Definition - void no Parameters";
@@ -146,7 +198,19 @@
         Declaration = "- (void)<#method name#>";
         CompletionPrefix = mev;
         OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objc.implementation );
     },
+    {
+        Identifier = objc.method.void.declaration;
+        Name = "Method Declaration - void no Parameters";
+        IsMenuItem = YES;
+        BasedOn = objc.method.void;
+        CompletionPrefix = mev;
+        TextString = "$(Declaration);";
+        OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objcpp.interface, xcode.lang.objc.interface, xcode.lang.objcpp.protocol );
+    },
+
     {
         Identifier = objc.method.ibaction;
         Name = "Method Definition - IBAction";
@@ -155,7 +219,19 @@
         Declaration = "- (IBAction)<#method name#>:(id)sender";
         CompletionPrefix = iba;
         OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objc.implementation );
     },
+    {
+        Identifier = objc.method.ibaction.declaration;
+        Name = "Method Declaration - IBAction";
+        IsMenuItem = YES;
+        BasedOn = objc.method.ibaction;
+        CompletionPrefix = iba;
+        TextString = "$(Declaration);";
+        OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objcpp.interface, xcode.lang.objc.interface, xcode.lang.objcpp.protocol );
+    },
+
     {
         Identifier = objc.method.generic;
         Name = "Method Definition - Generic Method";
@@ -164,7 +240,19 @@
         Declaration = "- (<#return type#>)<#method name#>:(<#parameter type 1#>)<#parameter name 1#>";
         CompletionPrefix = meg;
         OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objc.implementation );
     },
+    {
+        Identifier = objc.method.generic.declaration;
+        Name = "Method Declaration - Generic Method";
+        IsMenuItem = YES;
+        BasedOn = objc.method.generic;
+        CompletionPrefix = meg;
+        TextString = "$(Declaration);";
+        OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objcpp.interface, xcode.lang.objc.interface, xcode.lang.objcpp.protocol );
+    },
+
     {
         Identifier = objc.method.nsstring;
         Name = "Method Definition - NSString Return Value";
@@ -173,7 +261,19 @@
         CompletionPrefix = mes;
         Declaration = "- (NSString *)<#method name#>";
         OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objc.implementation );
     },
+    {
+        Identifier = objc.method.nsstring.declaration;
+        Name = "Method Declaration - NSString Return Value";
+        IsMenuItem = YES;
+        BasedOn = objc.method.nsstring;
+        CompletionPrefix = mes;
+        TextString = "$(Declaration);";
+        OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objcpp.interface, xcode.lang.objc.interface, xcode.lang.objcpp.protocol );
+    },
+
     {
         Identifier = objc.method.parameter;
         Name = "Method Parameter";
@@ -182,16 +282,8 @@
         TextString = "<#description#>:(<#type#>)<#name#>";
         CompletionPrefix = para;
         OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objc.implementation, xcode.lang.objcpp.interface, xcode.lang.objc.interface, xcode.lang.objcpp.protocol );
     },
-    {
-        Identifier = objc.string.format;
-        Name = "NSString With Format";
-        IsMenuItem = YES;
-        BasedOn = objc;
-        CompletionPrefix = sf;
-        TextString = "[NSString stringWithFormat:@\"<#!format!#>\", <#arguments#>]";
-        OnlyAtBOL = NO;
-    },
-    
+
 )
 

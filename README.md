@@ -105,40 +105,62 @@ of macros, put them into a separate file in the same directory.
 
 Here’s a quick run-down of some of the macros:
 
-Objective-C String Literal
---------------------------
+
+Strings
+-------
+
+### Objective-C String Literal
 
 Inserts `@""`. If something is selected, it puts that between the quotes.
 Without selection, moves the cursor between the quotes.
 
 Recommended shortcut: ⌃\
 
-NSLog() Calls
--------------
+### NSString With Format
+
+Inserts [NSString stringWithFormat:...].
+
+Recommended shortcut: ⌃F
+
+
+NSLog()
+-------
 
 Inserts `NSLog()` calls with zero and one arguments. The two are linked
 in a cycle list.
 
 Recommended shortcut: ⌃L
 
-Single-Statement if ()
-----------------------
+
+Control Statements
+------------------
+
+### Single-Statement if ()
 
 Inserts an `if ()` statement without the braces. It’s linked to several
 other `if ()` statement variants in a cycle list.
 
 Recommended shortcut: ⌃I
 
-Method Definitions
-------------------
+Methods
+-------
 
-Several variants of methods with different return value and parameter
-combinations. They are linked together in a cycle list.
+### Declarations and Definitions
 
-Recommended shortcut: ⌃M
+Several variants of method declarations and definitions with different return
+value and parameter combinations. If you assign a keyboard shortcut, it should
+be assigned to the “Return Value no Parameters” variants of declaration or definition
+because those define the cycle list.
 
-Method Parameter
-----------------
+The completion prefixes are identical for declaration and definition of each variant,
+but the macros are context-sensitive. If you use a completion prefix in an implementation
+context, a definition will be inserted, and if you use the same prefix in an interface
+context, a declaration will be inserted.
+
+Recommended shortcut for definition: ⌃M
+Recommended shortcut for declaration: ⌃H
+
+### Method Parameter
 
 Inserts an `xxxx:(yyy)zzz` sequence to add a parameter to a method
 definition/declaration. Ideal for combination with the method
@@ -146,8 +168,10 @@ blocks in the previous item.
 
 Recommended shortcut: ⌃P
 
-@property Declarations
-----------------------
+Properties
+----------
+
+### Declarations
 
 Inserts @property declarations. Cycles through three variants with
 the `retain`, `assign` and `copy` attributes. The selection ends
@@ -157,21 +181,13 @@ declaration, select it and invoke the shortcut.
 
 Recommended shortcut: ⌃R
 
-@property Synthesize
---------------------
+### Synthesize
 
 Inserts @synthesize instructions. Cycles through two variants,
 the second of which uses the `property = ivar` form to assign the
 property to an ivar with a different name.
 
 Recommended shortcut: ⌃S
-
-NSString With Format
---------------------
-
-Inserts [NSString stringWithFormat:...].
-
-Recommended shortcut: ⌃F
 
 
 About the Cheat Sheet Generator
