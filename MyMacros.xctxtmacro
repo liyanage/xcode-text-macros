@@ -127,9 +127,19 @@
         Name = "Method Definition - void no Parameters";
         IsMenuItem = YES;
         BasedOn = objc.method;
-        Declaration = "- (<#return type#>)<#method name#>";
+        Declaration = "- (void)<#method name#>";
         CompletionPrefix = mev;
+        OnlyAtBOL = YES;
+    },
+    {
+        Identifier = objc.method.return;
+        Name = "Method Definition - Return Value no Parameters";
+        IsMenuItem = YES;
+        BasedOn = objc.method;
+        Declaration = "- (<#return type#>)<#method name#>";
+        CompletionPrefix = me;
         CycleList = (
+        	objc.method.return.
         	objc.method.void,
 			objc.method.generic,
 			objc.method.nsstring,
@@ -142,7 +152,7 @@
         IsMenuItem = YES;
         BasedOn = objc.method;
         Declaration = "- (<#return type#>)<#method name#>:(<#parameter type 1#>)<#parameter name 1#>";
-        CompletionPrefix = me;
+        CompletionPrefix = meg;
         OnlyAtBOL = YES;
     },
     {
