@@ -139,7 +139,7 @@
         Declaration = "- (<#return type#>)<#method name#>";
         CompletionPrefix = me;
         CycleList = (
-        	objc.method.return.
+        	objc.method.return,
         	objc.method.void,
 			objc.method.generic,
 			objc.method.nsstring,
