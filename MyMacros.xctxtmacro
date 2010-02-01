@@ -118,7 +118,7 @@
         IsMenuItem = NO;
         BasedOn = objc;
         OnlyAtBOL = YES;
-		TextString = "$(Declaration)$(BlockSeparator)\n{\n\t<#!statements!#>\n}";
+		TextString = "$(Declaration)\n{\n\t<#!statements!#>\n}";
 		IncludeContexts = ( "xcode.lang.objc.implementation" );
 		ExcludeContexts = ( "xcode.lang.objc.block" );
 },

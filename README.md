@@ -69,7 +69,14 @@ The second step is to start writing (and hopefully sharing) your own macros:
   `Contents/PlugIns/TextMacros.xctxtmacro/Contents/Resources/`.
 * The Xcode user defaults also influence the macros, specifically the whitespace.
   These defaults are documented [here](http://developer.apple.com/mac/library/documentation/DeveloperTools/Reference/XcodeUserDefaultRef/100-Xcode_User_Defaults/UserDefaultRef.html#//apple_ref/doc/uid/TP40005535-CH3-SW40).
-
+* Completion prefixes are more useful when you limit the macros to the
+  source code contexts in which they make sense. You do that by specifying
+  appropriate context include and exclude lists for each macro. To find out
+  what contexts are active at a particular source code location, I use
+  a one-line shell script with the command `echo $XCSourceContext`
+  that I added as an Xcode user script. I place the cursor in the location
+  I’m interested in and run the script, which inserts the list of context
+  identifiers.
 
 About the Macros
 ================
