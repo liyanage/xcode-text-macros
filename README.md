@@ -118,7 +118,7 @@ Recommended shortcut: ⌃\
 
 ### NSString With Format
 
-Inserts [NSString stringWithFormat:...].
+Inserts `[NSString stringWithFormat:...]` with a format string and arguments placeholders.
 
 Recommended shortcut: ⌃F
 
