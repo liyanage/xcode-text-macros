@@ -158,6 +158,7 @@ context, a definition will be inserted, and if you use the same prefix in an int
 context, a declaration will be inserted.
 
 Recommended shortcut for definition: ⌃M
+
 Recommended shortcut for declaration: ⌃H
 
 ### Method Parameter
@@ -166,29 +167,35 @@ Inserts an `xxxx:(yyy)zzz` sequence to add a parameter to a method
 definition/declaration. Ideal for combination with the method
 blocks in the previous item.
 
-Recommended shortcut: ⌃P
+Recommended shortcut: Suggest to use the completion prefix.
 
 Properties
 ----------
 
 ### Declarations
 
-Inserts @property declarations. Cycles through three variants with
+Inserts `@property` declarations. Cycles through three variants with
 the `retain`, `assign` and `copy` attributes. The selection ends
 up in the type and name part. Tip: copy/paste the property’s
 instance variable declaration and paste it where you want the
 declaration, select it and invoke the shortcut.
 
-Recommended shortcut: ⌃R
+Recommended shortcut: ⌃P
 
 ### Synthesize
 
-Inserts @synthesize instructions. Cycles through two variants,
+Inserts `@synthesize` instructions. Cycles through two variants,
 the second of which uses the `property = ivar` form to assign the
 property to an ivar with a different name.
 
 Recommended shortcut: ⌃S
 
+### Release and nil ivar
+
+Inserts two lines to release and nil an ivar in a dealloc method.
+The selection is used as ivar name.
+
+Recommended shortcut: Recommend to use the completion prefix.
 
 About the Cheat Sheet Generator
 ===============================

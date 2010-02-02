@@ -93,6 +93,16 @@
         CompletionPrefix = "@syni";
         OnlyAtBOL = YES;
     },
+    {
+        Identifier = objc.property.releasenil;
+        Name = "Release and nil ivar";
+        IsMenuItem = YES;
+        BasedOn = objc;
+        CompletionPrefix = rel;
+        OnlyAtBOL = YES;
+        TextString = "[<#!ivar!#> release];\n<#!ivar!#> = nil;\n";
+		IncludeContexts = ( xcode.lang.objc.implementation );
+    },
 
 /* *********************************************************
  * NSLog
@@ -217,7 +227,7 @@
         IsMenuItem = YES;
         BasedOn = objc.method;
         Declaration = "- (IBAction)<#method name#>:(id)sender";
-        CompletionPrefix = iba;
+        CompletionPrefix = mei;
         OnlyAtBOL = YES;
 		IncludeContexts = ( xcode.lang.objc.implementation );
     },
@@ -226,7 +236,7 @@
         Name = "Method Declaration - IBAction";
         IsMenuItem = YES;
         BasedOn = objc.method.ibaction;
-        CompletionPrefix = iba;
+        CompletionPrefix = mei;
         TextString = "$(Declaration);";
         OnlyAtBOL = YES;
 		IncludeContexts = ( xcode.lang.objcpp.interface, xcode.lang.objc.interface, xcode.lang.objcpp.protocol );
@@ -281,7 +291,7 @@
         BasedOn = objc.method;
         TextString = "<#description#>:(<#type#>)<#name#>";
         CompletionPrefix = para;
-        OnlyAtBOL = YES;
+        OnlyAtBOL = NO;
 		IncludeContexts = ( xcode.lang.objc.implementation, xcode.lang.objcpp.interface, xcode.lang.objc.interface, xcode.lang.objcpp.protocol );
     },
 
