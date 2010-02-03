@@ -10,7 +10,7 @@ adding your macros, and sending me a pull request.
 
 There is also a cheat sheet generator that lists the macros on an HTML
 page with their completion prefixes and your keybord shortcuts.
-Here’s an [example](http://www.entropy.ch/software/macosx/xcode-macro-cheat-sheet.html).
+[Here’s an example](http://www.entropy.ch/software/macosx/xcode-macro-cheat-sheet.html).
 You’re more than welcome to spice up that HTML in the XSLT:-)
 
 
@@ -19,15 +19,12 @@ About Xcode’s Text Macros in General
 
 My guess is that they are underutilized by Xcode users. They certainly
 aren’t very discoverable where they are in the Edit menu, with no keyboard
-shortcuts assigned by default. Personally, I would give them their own toplevel
-menu bar item in Xcode, with a nice space-saving icon like the one
-[BBEdit](http://www.barebones.com/products/bbedit/)
-uses for its clippings.
-
-I know I didn’t use them a lot, I used
+shortcuts assigned by default. I know I didn’t use them a lot, I used
 [Objective Development](http://www.obdev.at)’s
 [Completion Dictionary](http://www.obdev.at/products/completion-dictionary/index.html)
-instead.
+instead. Personally, I would give the macros their own toplevel menu bar
+item in Xcode, with a nice space-saving icon like the one
+[BBEdit](http://www.barebones.com/products/bbedit/) uses for its clippings.
 
 But Xcode’s macros are very powerful. The first step to harnessing that power
 for your daily coding is to start using what’s already there:
