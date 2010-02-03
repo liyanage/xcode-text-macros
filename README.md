@@ -55,6 +55,9 @@ for your daily coding is to start using what’s already there, the built-in mac
   giving them their own shortcut. In those cases it’s a good idea to
   still memorize their completion shortcut, which is the next best thing.
   To insert the macro, type the completion shortcut and hit the tab key.
+* I like to see the completion suggestions right away in a popup list.
+  I set the “Automatically Suggest” time in the Xcode preferences to “Immediate”
+  and enabled the list with this setting: `defaults write com.apple.Xcode XCCodeSenseAutoSuggestionStyle List`.
 
 The second step is to start writing (and hopefully sharing) your own macros:
 
@@ -75,10 +78,6 @@ The second step is to start writing (and hopefully sharing) your own macros:
   I’m interested in and run the script, which inserts the list of context
   identifiers.
 
-A related tip: I like to see the completion suggestions immediately, in a list,
-so I use this setting:
-
-    defaults write com.apple.Xcode XCCodeSenseAutoSuggestionStyle List
 
 About the Macros
 ================
