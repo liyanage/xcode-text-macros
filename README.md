@@ -17,25 +17,25 @@ You’re more than welcome to spice up that HTML in the XSLT:-)
 About Xcode’s Text Macros in General
 ====================================
 
-My guess is that they are underutilized by Xcode users. They certainly
-aren’t very discoverable where they are in the Edit menu, with no keyboard
-shortcuts assigned by default. I know I didn’t use them a lot, I used
+My guess is that text macros are not well known to many Xcode users. They aren’t
+easy to find where they are, deep down in submenus of the Edit menu, with no default
+keyboard shortcuts. I know I didn’t use them a lot, I used
 [Objective Development](http://www.obdev.at)’s
 [Completion Dictionary](http://www.obdev.at/products/completion-dictionary/index.html)
-instead. Personally, I would give the macros their own toplevel menu bar
-item in Xcode, with a nice space-saving icon like the one
+instead. Personally, I would give the macros their own toplevel menu bar item in Xcode,
+with a nice space-saving icon like the one
 [BBEdit](http://www.barebones.com/products/bbedit/) uses for its clippings.
 
-But Xcode’s macros are very powerful. The first step to harnessing that power
-for your daily coding is to start using what’s already there:
+Xcode’s macro system is very powerful. The first step to harnessing that power
+for your daily coding is to start using what’s already there, the built-in macros:
 
-* Assigning keyboard shortcuts to the most often used macros is *highly*
-  recommended, especially to get one of the coolest text macro features,
+* Assigning keyboard shortcuts to the most often used ones is *highly*
+  recommended, especially to get one of the coolest macro features,
   cycle lists. Cycle lists link together related macros and let you
   quickly flip through them by repeatedly pressing the shortcut. This
-  is very useful for different variants of `if ()` statements, for example.
-  Until recently I didn’t even know about cycle lists. The cheat sheet
-  shows you which macros are part of a cycle list.
+  is very useful for variants of similar constructs such as `if ()` statements
+  or method definitions, for example. Until recently I didn’t know about
+  cycle lists. The cheat sheet shows you which macros are part of a cycle list.
 * Another great feature that’s easier to use with keyboard shortcuts is
   the ability of some macros to wrap selected text. Again this is useful
   for block statements such as `if ()`, especially in combination with the previous
@@ -74,6 +74,11 @@ The second step is to start writing (and hopefully sharing) your own macros:
   that I added as an Xcode user script. I place the cursor in the location
   I’m interested in and run the script, which inserts the list of context
   identifiers.
+
+A related tip: I like to see the completion suggestions immediately, in a list,
+so I use this setting:
+
+    defaults write com.apple.Xcode XCCodeSenseAutoSuggestionStyle List
 
 About the Macros
 ================
