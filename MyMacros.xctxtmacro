@@ -211,7 +211,7 @@
     },
 
 /* *********************************************************
- * Grand Central Dispatch
+ * Grand Central Dispatch / Blocks
  * *********************************************************/
 
     {
@@ -222,6 +222,11 @@
         CompletionPrefix = "dia";
         OnlyAtBOL = YES;
 		TextString = "dispatch_async(dispatch_get_global_queue(0, 0), ^{\n\t<#!statements!#>\n});";
+        CycleList = (
+        	objc.gcd.asyncglobal,
+        	objc.gcd.asyncmain,
+        	objc.gcd.syncmain,
+        );
 	},
     {
         Name = "dispatch_async() to Main Queue";
@@ -240,6 +245,38 @@
         CompletionPrefix = "dis";
         OnlyAtBOL = YES;
 		TextString = "dispatch_sync(dispatch_get_main_queue(), ^{\n\t<#!statements!#>\n});";
+	},
+    {
+        Name = "Block Literal";
+        Identifier = objc.gcd.block;
+        IsMenuItem = YES;
+        BasedOn = objc;
+        CompletionPrefix = "bl";
+        OnlyAtBOL = NO;
+		TextString = "^$(ArgumentList){\n\t<#!statements!#>\n}";
+        CycleList = (
+        	objc.gcd.block,
+        	objc.gcd.block.args,
+        	objc.gcd.block.comparator,
+        );
+	},
+    {
+        Name = "Block Literal - With Arguments";
+        Identifier = objc.gcd.block.args;
+        IsMenuItem = YES;
+        BasedOn = objc.gcd.block;
+        CompletionPrefix = "bla";
+        OnlyAtBOL = NO;
+		ArgumentList = "(<#arguments#>) ";
+	},
+    {
+        Name = "Block Literal - Comparator";
+        Identifier = objc.gcd.block.comparator;
+        IsMenuItem = YES;
+        BasedOn = objc.gcd.block;
+        CompletionPrefix = "blc";
+        OnlyAtBOL = NO;
+		ArgumentList = "(id obj1, id obj2) ";
 	},
 
 /* *********************************************************

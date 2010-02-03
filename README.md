@@ -232,8 +232,9 @@ Grand Central Dispatch
 
 Inserts a `dispatch_async()` statement with a block literal targeting
 the global concurrent queue. A selection or the cursor ends up in the block.
+Cycles through the other dispatch_* variants below.
 
-Recommended shortcut: Use completion prefix `dia`.
+Recommended shortcut: ⌃D or use the completion prefix, `dia`.
 
 ### dispatch_async() to Main Queue
 
@@ -248,6 +249,14 @@ Inserts a `dispatch_sync()` statement with a block literal targeting
 the main queue. A selection or the cursor ends up in the block.
 
 Recommended shortcut: Use completion prefix `dis`.
+
+### Block Literal
+
+Inserts a block literal. Cycles through variants with an empty argument
+list and an argument list for an NSComparator block. A selection or the
+cursor ends up between the braces.
+
+Recommended shortcut: Use completion prefix ⌃]
 
 
 About the Cheat Sheet Generator
