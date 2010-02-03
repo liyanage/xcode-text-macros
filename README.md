@@ -142,6 +142,27 @@ other `if ()` statement variants in a cycle list.
 
 Recommended shortcut: ⌃I
 
+Markers
+-------
+
+### TODO Marker
+
+Inserts a `// TODO:` comment, which will show up in Xcode’s function popup.
+
+Recommended shortcut: Use completion prefix `todo`;
+
+### FIXME Marker
+
+Inserts a `// FIXME:` comment, which will show up in Xcode’s function popup.
+
+Recommended shortcut: Use completion prefix `fix`;
+
+### TODO Marker
+
+Inserts a `// !!!:` comment, which will show up in Xcode’s function popup.
+
+Recommended shortcut: Use completion prefix `fix2`;
+
 Methods
 -------
 
@@ -169,6 +190,13 @@ blocks in the previous item.
 
 Recommended shortcut: Suggest to use the completion prefix.
 
+### Bracket Expression
+
+Inserts a bracket expression. The built-in bracket expression has
+a trailing space that I don’t like.
+
+Recommended shortcut: ⌃[
+
 Properties
 ----------
 
@@ -195,7 +223,32 @@ Recommended shortcut: ⌃S
 Inserts two lines to release and nil an ivar in a dealloc method.
 The selection is used as ivar name.
 
-Recommended shortcut: Recommend to use the completion prefix.
+Recommended shortcut: Use the completion prefix `rel`.
+
+Grand Central Dispatch
+----------------------
+
+### dispatch_async() to Global Concurrent Queue
+
+Inserts a `dispatch_async()` statement with a block literal targeting
+the global concurrent queue. A selection or the cursor ends up in the block.
+
+Recommended shortcut: Use completion prefix `dia`.
+
+### dispatch_async() to Main Queue
+
+Inserts a `dispatch_async()` statement with a block literal targeting
+the main queue. A selection or the cursor ends up in the block.
+
+Recommended shortcut: Use completion prefix `diam`.
+
+### dispatch_sync() to Main Queue
+
+Inserts a `dispatch_sync()` statement with a block literal targeting
+the main queue. A selection or the cursor ends up in the block.
+
+Recommended shortcut: Use completion prefix `dis`.
+
 
 About the Cheat Sheet Generator
 ===============================

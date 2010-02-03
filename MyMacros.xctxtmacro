@@ -153,6 +153,96 @@
     },
 
 /* *********************************************************
+ * Markers
+ * *********************************************************/
+
+    {
+        Identifier = objc.marker;
+        BasedOn = objc;
+        IsMenuItem = NO;
+		IncludeContexts = ( xcode.lang.objc.implementation, xcode.lang.objcpp.interface, xcode.lang.objc.interface, xcode.lang.objcpp.protocol );
+        TextString = "// $(MarkerName): <#!comment!#>";
+        OnlyAtBOL = NO;
+    },
+    {
+        Identifier = objc.marker.todo;
+        Name = "Mark TODO";
+        BasedOn = objc.marker;
+        MarkerName = "TODO";
+        CompletionPrefix = todo;
+    },
+    {
+        Identifier = objc.marker.todo.bol;
+        Name = "Mark TODO";
+        BasedOn = objc.marker.todo;
+        CompletionPrefix = todo;
+        OnlyAtBOL = YES;
+        IsMenuItem = YES;
+    },
+    {
+        Identifier = objc.marker.fixme;
+        Name = "Mark FIXME";
+        BasedOn = objc.marker;
+        MarkerName = "FIXME";
+        CompletionPrefix = fix;
+    },
+    {
+        Identifier = objc.marker.fixme.bol;
+        Name = "Mark FIXME";
+        BasedOn = objc.marker.fixme;
+        CompletionPrefix = fix;
+        OnlyAtBOL = YES;
+        IsMenuItem = YES;
+    },
+    {
+        Identifier = objc.marker.bang;
+        Name = "Mark !!!";
+        BasedOn = objc.marker;
+        MarkerName = "!!!";
+        CompletionPrefix = "fix2";
+    },
+    {
+        Identifier = objc.marker.bang.bol;
+        Name = "Mark !!!";
+        BasedOn = objc.marker.bang;
+        CompletionPrefix = "fix2";
+        OnlyAtBOL = YES;
+        IsMenuItem = YES;
+    },
+
+/* *********************************************************
+ * Grand Central Dispatch
+ * *********************************************************/
+
+    {
+        Name = "dispatch_async() to Global Queue";
+        Identifier = objc.gcd.asyncglobal;
+        IsMenuItem = YES;
+        BasedOn = objc;
+        CompletionPrefix = "dia";
+        OnlyAtBOL = YES;
+		TextString = "dispatch_async(dispatch_get_global_queue(0, 0), ^{\n\t<#!statements!#>\n});";
+	},
+    {
+        Name = "dispatch_async() to Main Queue";
+        Identifier = objc.gcd.asyncmain;
+        IsMenuItem = YES;
+        BasedOn = objc;
+        CompletionPrefix = "diam";
+        OnlyAtBOL = YES;
+		TextString = "dispatch_async(dispatch_get_main_queue(), ^{\n\t<#!statements!#>\n});";
+	},
+    {
+        Name = "dispatch_sync() to Main Queue";
+        Identifier = objc.gcd.syncmain;
+        IsMenuItem = YES;
+        BasedOn = objc;
+        CompletionPrefix = "dis";
+        OnlyAtBOL = YES;
+		TextString = "dispatch_sync(dispatch_get_main_queue(), ^{\n\t<#!statements!#>\n});";
+	},
+
+/* *********************************************************
  * Methods
  * *********************************************************/
 
@@ -293,6 +383,16 @@
         CompletionPrefix = para;
         OnlyAtBOL = NO;
 		IncludeContexts = ( xcode.lang.objc.implementation, xcode.lang.objcpp.interface, xcode.lang.objc.interface, xcode.lang.objcpp.protocol );
+		ExcludeContexts = ( );
+    },
+
+    /* the built-in bracket expression macro has a space before the closing bracket that I don't like */
+    {
+        Identifier = objc.bracket;
+        BasedOn = objc;
+        IsMenuItem = YES;
+        Name = "Bracket Expression";
+        TextString = "[<#!expression!#>]";
     },
 
 )
