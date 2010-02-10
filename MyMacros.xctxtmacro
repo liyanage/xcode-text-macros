@@ -46,9 +46,19 @@
         CompletionPrefix = "@pr";
 		CycleList = (
 			objc.property.declaration.retain,
+			objc.property.declaration.retain.iboutlet,
 			objc.property.declaration.assign,
 			objc.property.declaration.copy,
 		);
+        OnlyAtBOL = YES;
+    },
+    {
+        Identifier = objc.property.declaration.retain.iboutlet;
+        BasedOn = objc.property.declaration;
+        IsMenuItem = YES;
+        Name = "@property Declaration - IBOutlet";
+        TextString = "@property (retain) IBOutlet <#!type and name!#>;";
+        CompletionPrefix = "@pri";
         OnlyAtBOL = YES;
     },
     {
@@ -302,6 +312,7 @@
         CycleList = (
         	objc.method.return,
         	objc.method.void,
+        	objc.method.bool,
         	objc.method.ibaction,
 			objc.method.generic,
 			objc.method.nsstring,
@@ -319,6 +330,7 @@
         CycleList = (
         	objc.method.return.declaration,
         	objc.method.void.declaration,
+        	objc.method.bool.declaration,
         	objc.method.ibaction.declaration,
 			objc.method.generic.declaration,
 			objc.method.nsstring.declaration,
@@ -329,7 +341,7 @@
 
     {
         Identifier = objc.method.void;
-        Name = "Method Definition - void no Parameters";
+        Name = "Method Definition - void";
         IsMenuItem = YES;
         BasedOn = objc.method;
         Declaration = "- (void)<#method name#>";
@@ -343,6 +355,26 @@
         IsMenuItem = YES;
         BasedOn = objc.method.void;
         CompletionPrefix = mev;
+        TextString = "$(Declaration);";
+        OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objcpp.interface, xcode.lang.objc.interface, xcode.lang.objcpp.protocol );
+    },
+    {
+        Identifier = objc.method.bool;
+        Name = "Method Definition - BOOL";
+        IsMenuItem = YES;
+        BasedOn = objc.method;
+        Declaration = "- (BOOL)<#method name#>";
+        CompletionPrefix = meb;
+        OnlyAtBOL = YES;
+		IncludeContexts = ( xcode.lang.objc.implementation );
+    },
+    {
+        Identifier = objc.method.bool.declaration;
+        Name = "Method Declaration - BOOL";
+        IsMenuItem = YES;
+        BasedOn = objc.method.bool;
+        CompletionPrefix = meb;
         TextString = "$(Declaration);";
         OnlyAtBOL = YES;
 		IncludeContexts = ( xcode.lang.objcpp.interface, xcode.lang.objc.interface, xcode.lang.objcpp.protocol );
@@ -430,6 +462,14 @@
         IsMenuItem = YES;
         Name = "Bracket Expression";
         TextString = "[<#!expression!#>]";
+    },
+    {
+        Identifier = objc.selector;
+        BasedOn = objc;
+        IsMenuItem = YES;
+        Name = "@selector";
+        CompletionPrefix = sel;
+        TextString = "@selector(<#!selector!#>)";
     },
 
 )

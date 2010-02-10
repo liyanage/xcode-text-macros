@@ -27,7 +27,7 @@ with a nice space-saving icon like the one
 [BBEdit](http://www.barebones.com/products/bbedit/) uses for its clippings.
 
 Xcode’s macro system is very powerful. The first step to harnessing that power
-for your daily coding is to start using what’s already there, the built-in macros:
+for your daily coding is to start using the macros that are already in Xcode:
 
 * Assigning keyboard shortcuts to the most often used ones is *highly*
   recommended, especially to get one of the coolest macro features,
@@ -59,7 +59,7 @@ for your daily coding is to start using what’s already there, the built-in mac
   I set the “Automatically Suggest” time in the Xcode preferences to “Immediate”
   and enabled the list with this setting: `defaults write com.apple.Xcode XCCodeSenseAutoSuggestionStyle List`.
 
-The second step is to start writing (and hopefully sharing) your own macros:
+The next step is to start writing (and hopefully sharing) your own macros:
 
 * Xcode’s macro language is fairly complicated, and as far as I know not
   well-documented, but it is also very powerful because it uses an inheritance
