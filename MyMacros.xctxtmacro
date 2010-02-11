@@ -110,7 +110,7 @@
         BasedOn = objc;
         CompletionPrefix = rel;
         OnlyAtBOL = YES;
-        TextString = "[<#!ivar!#> release];\n<#!ivar!#> = nil;\n";
+        TextString = "[<#!ivar!#> release];\n<#!ivar!#> = nil;";
 		IncludeContexts = ( xcode.lang.objc.implementation );
     },
 
@@ -159,7 +159,7 @@
             c.block.if,
             c.block.ifelse,
         );
-        TextString = "$(Statement)$(BlockSeparator)\n\t<#!statement!#>;\n";
+        TextString = "$(Statement)\n\t<#!statement!#>;\n";
     },
 
 /* *********************************************************
