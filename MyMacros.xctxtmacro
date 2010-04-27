@@ -515,5 +515,12 @@
         TextString = "@selector(<#!selector!#>)";
     },
 
+    {
+        Identifier = objc.nserror.creation;
+        Name = "NSError: creation";
+        IsMenuItem = YES;
+        BasedOn = objc;
+        TextString = "*<#theErr#> = [NSError errorWithDomain:<#theDomain#>\n\tcode:<#code#>\n\tuserInfo:[NSDictionary dictionaryWithObjectsAndKeys:\n\t\tNSLocalizedDescriptionKey,   NSLocalizedString(@\"<#description here#>\", @\"\"),\n\t\tnil]];";
+    },
 )
 
