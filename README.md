@@ -10,8 +10,9 @@ adding your macros, and sending me a pull request.
 
 There is also a cheat sheet generator that lists the macros on an HTML
 page with their completion prefixes and your keybord shortcuts.
-[Here’s an example](http://www.entropy.ch/software/macosx/xcode-macro-cheat-sheet.html).
-You’re more than welcome to spice up that HTML in the XSLT:-)
+[Here’s an example](http://www.entropy.ch/software/macosx/xcode-macro-cheat-sheet.html)
+with my particular keyboard shortcuts. You’re more than welcome to
+spice up that HTML in the XSLT :-)
 
 
 About Xcode’s Text Macros in General
@@ -27,15 +28,19 @@ with a nice space-saving icon like the one
 [BBEdit](http://www.barebones.com/products/bbedit/) uses for its clippings.
 
 Xcode’s macro system is very powerful. The first step to harnessing that power
-for your daily coding is to start using the macros that are already in Xcode:
+for your daily coding is to start using the macros that are already there:
 
 * Assigning keyboard shortcuts to the most often used ones is *highly*
   recommended, especially to get one of the coolest macro features,
   cycle lists. Cycle lists link together related macros and let you
-  quickly flip through them by repeatedly pressing the shortcut. This
-  is very useful for variants of similar constructs such as `if ()` statements
-  or method definitions, for example. Until recently I didn’t know about
-  cycle lists. The cheat sheet shows you which macros are part of a cycle list.
+  quickly flip through them by repeatedly pressing the shortcut. While
+  Xcode switches from variant to variant, it preserves your wrapped
+  selected text (see next item) and replaces just the macro code around
+  it.
+  Cycle lists are useful for variants of similar constructs such as `if ()`
+  statements or method definitions. Until recently I didn’t know about
+  cycle lists. The cheat sheet shows you which macros are grouped together
+  in such a list.
 * Another great feature that’s easier to use with keyboard shortcuts is
   the ability of some macros to wrap selected text. Again this is useful
   for block statements such as `if ()`, especially in combination with the previous
@@ -116,6 +121,27 @@ Inserts `@""`. If something is selected, it puts that between the quotes.
 Without selection, moves the cursor between the quotes.
 
 Recommended shortcut: ⌃\
+
+### NSString With Format
+
+Inserts `[NSString stringWithFormat:...]` with a format string and arguments placeholders.
+
+Recommended shortcut: ⌃F
+
+Containers
+-------
+
+### NSMutableArray
+
+Inserts `NSMutableArray *`.
+
+Recommended shortcut: use completion prefix `nsma`
+
+### NSMutableArray array
+
+Inserts `[NSMutableArray array]`.
+
+Recommended shortcut: use completion prefix `nsmaa`
 
 ### NSString With Format
 

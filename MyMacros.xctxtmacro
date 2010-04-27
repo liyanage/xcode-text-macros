@@ -27,6 +27,49 @@
         TextString = "@\"<#!string!#>\"";
         OnlyAtBOL = NO;
     },
+    {
+        Identifier = objc.nsstring;
+        BasedOn = objc;
+        IsMenuItem = YES;
+        CompletionPrefix = "nss";
+        Name = "NSString *";
+        TextString = "NSString *";
+        OnlyAtBOL = NO;
+    },
+
+
+/* *********************************************************
+ * Containers
+ * *********************************************************/
+
+    {
+        Identifier = objc.array.mutable;
+        Name = "NSMutableArray *";
+        IsMenuItem = YES;
+        BasedOn = objc;
+        CompletionPrefix = nsma;
+        TextString = "NSMutableArray *";
+        OnlyAtBOL = YES;
+    },
+    {
+        Identifier = objc.array.mutable;
+        Name = "NSMutableArray *";
+        IsMenuItem = YES;
+        BasedOn = objc;
+        CompletionPrefix = nsma;
+        TextString = "NSMutableArray *";
+        OnlyAtBOL = NO;
+    },
+
+    {
+        Identifier = objc.array.mutable.array;
+        Name = "NSMutableArray array";
+        IsMenuItem = YES;
+        BasedOn = objc;
+        CompletionPrefix = nsmaa;
+        TextString = "[NSMutableArray array]";
+        OnlyAtBOL = NO;
+    },
 
 /* *********************************************************
  * Properties
