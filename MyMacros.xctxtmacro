@@ -153,7 +153,7 @@
         BasedOn = objc;
         CompletionPrefix = rel;
         OnlyAtBOL = YES;
-        TextString = "[<#!ivar!#> release];\n<#!ivar!#> = nil;";
+        TextString = "[<#!ivar!#> release], <#!ivar!#> = nil;";
 		IncludeContexts = ( xcode.lang.objc.implementation );
     },
 
