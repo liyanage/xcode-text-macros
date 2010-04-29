@@ -105,7 +105,18 @@ shortcuts :-)
 
 Ideally, you would `git clone` this project directly from GitHub
 to some location on your system and put a symbolic link to the macro file into
-the directory given above. That way, you can always update to the newest version
+the directory given above. 
+
+As the directory is not there by default, the easiest way to create it is
+
+	`mkdir -p "$HOME/Library/Application Support/Developer/Shared/Xcode/Specifications/"`
+
+which will recursively create all necessary directories down to that level. Then add a 
+symbolic link to the .xctxtmacro file:
+
+	`ln -s *your-git-repository*/MyMacros.xctxtmacro "$HOME/Library/Application Support/Developer/Shared/Xcode/Specifications/"`
+
+That way, you can always update to the newest version
 of the macro collection with a simple `git pull`. If you start your own collection
 of macros, put them into a separate file in the same directory.
 
@@ -229,7 +240,8 @@ Properties
 
 ### Declarations
 
-Inserts `@property` declarations. Cycles through three variants with
+Inserts `@property` declarations. If you assign a keyboard shortcut, it should
+be assigned to the “retain” variant. Cycles through three variants with
 the `retain`, `assign` and `copy` attributes. The selection ends
 up in the type and name part. Tip: copy/paste the property’s
 instance variable declaration and paste it where you want the
