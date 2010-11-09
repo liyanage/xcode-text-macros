@@ -71,6 +71,16 @@
         OnlyAtBOL = NO;
     },
 
+    {
+        Identifier = objc.dictionary.objectsandkeys;
+        Name = "NSDictionary with Objects and Keys";
+        IsMenuItem = YES;
+        BasedOn = objc;
+        CompletionPrefix = nsdok;
+        TextString = "[NSDictionary dictionaryWithObjectsAndKeys:<#(id)firstObject#>nil]";
+        OnlyAtBOL = NO;
+    },
+
 /* *********************************************************
  * Properties
  * *********************************************************/
@@ -202,9 +212,24 @@
             c.block.if,
             c.block.ifelse,
         );
-        TextString = "$(Statement)\n\t<#!statement!#>;\n";
+        TextString = "$(Statement)\n\t<#!statement!#>\n";
     },
-
+    {
+        Identifier = c.block.if;
+        BasedOn = c.block;
+        Command = "if";
+        Expressions = "<#condition#>";
+        Name = "If Block";
+        IsMenuItem = YES;
+        OnlyAtBOL = YES;
+        CompletionPrefix = if;
+        CycleList = (
+            c.block.if,
+            c.block.if.singlestatement,
+            c.block.ifelse,
+        );
+        TextString = "$(Statement) {\n\t<#!statements!#>\n}\n";
+    },
 /* *********************************************************
  * Markers
  * *********************************************************/
