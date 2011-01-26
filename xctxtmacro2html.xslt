@@ -26,13 +26,13 @@
 				}
 				
 				td.xcode {
-					font-style:italic;
-					font-weight:normal;
+					font-style: italic;
+					font-weight: normal;
 				}
 				
 				td.user {
-					font-style:normal;
-					font-weight:bold;
+					font-style: normal;
+					font-weight: bold;
 				}
 				
 				td, th {
@@ -85,7 +85,7 @@
 		<td class='code'><xsl:value-of select="string[preceding-sibling::key[1][. = 'CompletionPrefix']]"/></td>
 		<td class='shortcut'><xsl:value-of select="@shortcut"/></td>
 		<td><xsl:apply-templates select = 'array[preceding-sibling::key[1][. = "CycleList"]]/string' mode='cyclelist'/></td>
-		<td><xsl:attribute name="class"><xsl:value-of select="@defined_by"/></xsl:attribute><xsl:value-of select="@macrofile"/></td>
+		<td class="{@defined_by}"><xsl:value-of select="@macrofile"/></td>
 		<!--
 		<td class='code'>
 			<xsl:apply-templates select='string[preceding-sibling::key[1][. = "TextString"]]'/>

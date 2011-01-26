@@ -101,15 +101,15 @@ sub read_macrofile {
 	my $doc = $self->read_plist($path);
 
 	my %macrofile;
-	if($path=~m|^/Developer/Applications/Xcode.app/.*/([^/]+)\.xctxtmacro$|) {
-		%macrofile=("basename"=>$1,"defined"=>"xcode");
+	if($path =~ m|^/Developer/Applications/Xcode.app/.*/([^/]+)\.xctxtmacro$|) {
+		%macrofile = ("basename" => $1, "defined" => "xcode");
 	}
-	elsif($path=~m|/([^/]+)\.xctxtmacro$|) {
-		%macrofile=("basename"=>$1,"defined"=>"user");
+	elsif($path =~ m|/([^/]+)\.xctxtmacro$|) {
+		%macrofile = ("basename" => $1, "defined" => "user");
 	}
 	foreach my $element ($doc->findnodes('//dict[key = "Identifier"]')) {
-		$element->setAttribute(macrofile=>$macrofile{"basename"});
-		$element->setAttribute(defined_by=>$macrofile{"defined"});
+		$element->setAttribute(macrofile => $macrofile{"basename"});
+		$element->setAttribute(defined_by => $macrofile{"defined"});
 		$self->add_macro($element);		
 	}
 }
