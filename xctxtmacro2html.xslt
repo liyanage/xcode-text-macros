@@ -25,6 +25,16 @@
 					text-align: center;
 				}
 				
+				td.xcode {
+					font-style:italic;
+					font-weight:normal;
+				}
+				
+				td.user {
+					font-style:normal;
+					font-weight:bold;
+				}
+				
 				td, th {
 					padding: 2px;
 					vertical-align: top;
@@ -58,6 +68,7 @@
 				<th>Completion Prefix</th>
 				<th>Shortcut</th>
 				<th>Cycle List</th>
+				<th>Macro File</th>
 				<!--<th>Code</th>-->
 			</tr>
 			<xsl:apply-templates select="dict[string[preceding-sibling::key[1][. = 'IsMenuItem']][. = 'YES']]">
@@ -74,6 +85,7 @@
 		<td class='code'><xsl:value-of select="string[preceding-sibling::key[1][. = 'CompletionPrefix']]"/></td>
 		<td class='shortcut'><xsl:value-of select="@shortcut"/></td>
 		<td><xsl:apply-templates select = 'array[preceding-sibling::key[1][. = "CycleList"]]/string' mode='cyclelist'/></td>
+		<td><xsl:attribute name="class"><xsl:value-of select="@defined_by"/></xsl:attribute><xsl:value-of select="@macrofile"/></td>
 		<!--
 		<td class='code'>
 			<xsl:apply-templates select='string[preceding-sibling::key[1][. = "TextString"]]'/>
