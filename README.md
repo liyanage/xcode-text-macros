@@ -93,6 +93,14 @@ gets wrapped, where the cursor ends up, what placeholders get inserted.
 If you spend a lot of time in Xcode, you’ll really want to get familiar
 with text macros.
 
+Installation Xcode 4
+--------------------
+
+    cd *your-git-repository*
+    ln -s "$PWD/MyMacros-CodeSnippets" ~/Library/Developer/Xcode/UserData/CodeSnippets
+
+Sadly, you currently can’t collect links/aliases to your code snippets within the `~/Library/Developer/Xcode/UserData/CodeSnippets` directory. Xcode 4 seems to expect a flat directory structure.
+
 Installation
 ------------
 
